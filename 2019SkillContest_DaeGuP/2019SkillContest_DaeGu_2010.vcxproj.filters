@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2019SkillContest_DaeGu_Game">
+      <UniqueIdentifier>{07edfe1f-ebf9-46ff-85c3-c766cccb015b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2019SkillContest_DaeGu_Game\HEADER FILES">
+      <UniqueIdentifier>{2b5402c4-bf1c-4b10-9c8b-b24daeb32dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2019SkillContest_DaeGu_Game\MainGame">
+      <UniqueIdentifier>{0c7e92e7-9624-4503-b286-7a12954642d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2019SkillContest_DaeGu_Game\Scenes">
+      <UniqueIdentifier>{6b0fa879-30f1-4cff-aff6-4c52c9d1e797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2019SkillContest_DaeGu_Game\Prefabs">
+      <UniqueIdentifier>{4155096d-16c1-4bca-9780-0333365a0105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{a171e254-5104-4184-b7ab-441ac831fde7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component">
+      <UniqueIdentifier>{85dfcf27-379b-411f-8fe0-22331865904c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\BaseLayer">
+      <UniqueIdentifier>{c186bed2-4d71-4cea-b5e8-77b5219209dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Manager">
+      <UniqueIdentifier>{52fa2eea-0f3f-4157-84b8-0da1bc87a169}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DXUT\Core\DXUT.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTenum.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTmisc.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Core\DXUT.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTenum.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="DXUT\Optional\DXUTcamera.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTgui.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTres.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmesh.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmisc.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTres.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="Enums.h">
+      <Filter>2019SkillContest_DaeGu_Game\HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>2019SkillContest_DaeGu_Game\HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>2019SkillContest_DaeGu_Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\Collider.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\Component.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\MeshRenderer.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\Renderer.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\Rigidbody.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\Transform.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\BaseResource.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Camera.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Define.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\EventArgs.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\EventHandler.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\GameObject.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Math.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Mesh.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\MultiTexture.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\resource.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Scene.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\SingleTexture.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\SkyBox.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Sound.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Texture.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Time.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Timer.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\TouchEventArgs.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\CameraManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\CollisionManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\InputManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\ObjectManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\RenderManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\ResourceManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\SceneManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\Singleton.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component\SpriteRenderer.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>2019SkillContest_DaeGu_Game\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="2019SkillContest_DaeGu.cpp">
+      <Filter>2019SkillContest_DaeGu_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>2019SkillContest_DaeGu_Game\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\Collider.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\Component.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\MeshRenderer.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\Renderer.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\Rigidbody.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\Transform.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\BaseResource.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Camera.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\EventArgs.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\EventHandler.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\GameObject.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Math.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Mesh.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\MultiTexture.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Scene.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\SingleTexture.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\SkyBox.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Sound.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Texture.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Time.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Timer.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\TouchEventArgs.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\CameraManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\CollisionManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\InputManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\ObjectManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\RenderManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\ResourceManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\SceneManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\Singleton.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component\SpriteRenderer.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainGame.h">
+      <Filter>2019SkillContest_DaeGu_Game\MainGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
