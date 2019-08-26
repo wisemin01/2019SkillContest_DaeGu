@@ -24,7 +24,6 @@ struct Material
 using MaterialList	= std::vector<Material*>;
 using Shader		= ID3DXEffect;
 using DXBuffer		= ID3DXBuffer;
-using Color			= D3DXCOLOR;
 
 // * IF THE OBJECT IS NULL, THE FUNCTION IS NOW EXECUTED.
 #define SAFE_EXECUTE(p) if(p != nullptr) p

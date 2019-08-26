@@ -144,4 +144,32 @@ struct Matrix :
 	static Matrix PerspectiveFovLH(float fovy, float aspect, float zn, float zf);
 	static Matrix LookAtLH(const Vector3& eye, const Vector3& at, const Vector3& up = Vector3::Up);
 	static Matrix OrthoLH(float width, float height, float zn, float zf);
+	static Matrix View2D(const Vector3& position, const Vector3& scale, float angle);
 };
+
+class Color : public D3DXCOLOR
+{
+public:
+	Color() : D3DXCOLOR() {}
+	Color(DWORD argb) : D3DXCOLOR() {}
+	Color(CONST FLOAT* v) : D3DXCOLOR(v) {}
+	Color(CONST D3DXFLOAT16* v) : D3DXCOLOR(v) {}
+	Color(CONST D3DCOLORVALUE& v) : D3DXCOLOR(v) {}
+	Color(FLOAT r, FLOAT g, FLOAT b, FLOAT a) : D3DXCOLOR(r, g, b, a) {}
+
+	static const Color Red;
+	static const Color Orange;
+	static const Color Yellow;
+	static const Color Green;
+	static const Color Blue;
+	static const Color Violet;
+	static const Color Black;
+	static const Color White;
+	static const Color Original;
+};
+
+ostream& operator << (ostream& os, const Vector2& value);
+ostream& operator << (ostream& os, const Vector3& value);
+ostream& operator << (ostream& os, const Vector4& value);
+ostream& operator << (ostream& os, const Quaternion& value);
+ostream& operator << (ostream& os, const Matrix& value);

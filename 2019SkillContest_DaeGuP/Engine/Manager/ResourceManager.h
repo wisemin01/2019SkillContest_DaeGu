@@ -21,7 +21,7 @@ public:
 	ResourceManager();
 	~ResourceManager();
 
-	void RenderBegin();
+	void RenderBegin(INT flag);
 	void RenderEnd();
 	void OnResetDevice();
 	void OnLostDevice();
@@ -30,6 +30,7 @@ public:
 
 	void SetSpriteTransform(const Matrix& mat);
 	void SpriteDraw(Texture* source, const Color& color);
+	void SpriteDraw(Texture* source, const Color& color, const Vector3& center);
 
 public:
 	Texture* LoadTexture(const string& key, const string& path, int count = 0);

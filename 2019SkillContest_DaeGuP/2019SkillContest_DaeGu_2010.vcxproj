@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -388,6 +388,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\BaseLayer\BaseResource.cpp" />
     <ClCompile Include="Engine\BaseLayer\Camera.cpp" />
+    <ClCompile Include="Engine\BaseLayer\Camera2D.cpp" />
     <ClCompile Include="Engine\BaseLayer\EventArgs.cpp" />
     <ClCompile Include="Engine\BaseLayer\EventHandler.cpp" />
     <ClCompile Include="Engine\BaseLayer\GameObject.cpp" />
@@ -419,6 +420,7 @@
     <ClCompile Include="Engine\Manager\Singleton.cpp" />
     <ClCompile Include="IntroScene.cpp" />
     <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClInclude Include="DXUT\Core\DXUT.h" />
     <ClInclude Include="DXUT\Core\DXUTenum.h" />
     <ClInclude Include="DXUT\Core\DXUTmisc.h" />
@@ -439,6 +441,7 @@
     <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp" />
     <ClCompile Include="DXUT\Optional\SDKmesh.cpp" />
     <ClCompile Include="DXUT\Optional\SDKmisc.cpp" />
+    <ClInclude Include="Test.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2019SkillContest_DaeGu.cpp" />
@@ -448,6 +451,7 @@
   <ItemGroup>
     <ClInclude Include="Engine\BaseLayer\BaseResource.h" />
     <ClInclude Include="Engine\BaseLayer\Camera.h" />
+    <ClInclude Include="Engine\BaseLayer\Camera2D.h" />
     <ClInclude Include="Engine\BaseLayer\Define.h" />
     <ClInclude Include="Engine\BaseLayer\EventArgs.h" />
     <ClInclude Include="Engine\BaseLayer\EventHandler.h" />

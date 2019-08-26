@@ -7,6 +7,8 @@
 #include "resource.h"
 #include "MainGame.h"
 
+#include "Engine/BaseLayer/Timer.h"
+
 MainGame* g_pMainGame = nullptr;
 
 //--------------------------------------------------------------------------------------
@@ -74,7 +76,7 @@ void CALLBACK OnD3D9FrameRender( IDirect3DDevice9* pd3dDevice, double fTime, flo
 {
     HRESULT hr;
 
-	const D3DXCOLOR color = D3DXCOLOR(0.176f, 0.196f, 0.667f, 0.0f);
+	const Color color = Color(0.176f, 0.196f, 0.667f, 0.0f);
 
     // Clear the render target and the zbuffer 
     V( pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, color, 1.0f, 0 ) );
@@ -132,7 +134,7 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
 	(void)(freopen("CONIN$", "r", stdin));
 
     _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
-
+	/// _CrtSetBreakAlloc(452);
 #endif
 
     // Set the callback functions
@@ -168,6 +170,8 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
 #if defined(DEBUG) | defined(_DEBUG)
 	FreeConsole();
 #endif
+
+	Timer::RemoveAll();
 
 	return DXUTGetExitCode();
 }

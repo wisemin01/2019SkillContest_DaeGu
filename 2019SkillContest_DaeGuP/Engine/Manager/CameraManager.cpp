@@ -16,13 +16,18 @@ CameraManager::~CameraManager()
 	Camera::RemoveAll();
 }
 
+void CameraManager::SetProjection(const Matrix& matProj)
+{
+	DXUTGetD3D9Device()->SetTransform(D3DTS_PROJECTION, &matProj);
+}
+
 void CameraManager::SetViewMatrix()
 {
 	Camera* main = Camera::mainCamera;
 
 	if (main)
 	{
-		matView = Matrix::LookAtLH(main->position, main->lookAt, main->up);
+		matView = main->GetViewMatrix();
 		DXUTGetD3D9Device()->SetTransform(D3DTS_VIEW, &matView);
 	}
 }

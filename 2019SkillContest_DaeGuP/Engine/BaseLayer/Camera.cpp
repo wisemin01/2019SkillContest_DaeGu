@@ -9,6 +9,25 @@ void Camera::Update()
 {
 }
 
+Matrix Camera::GetViewMatrix()
+{
+	return Matrix::LookAtLH(position, lookAt, up);
+}
+
+Matrix Camera::GetProjectionMatrix()
+{
+	return Matrix::PerspectiveFovLH(D3DXToRadian(45.0f), 16.f / 9.f, 1.f, 50000.f);
+}
+
+Camera& Camera::SetMain()
+{
+	Camera::mainCamera = this;
+
+	CAMERA.SetProjection(GetProjectionMatrix());
+
+	return *this;
+}
+
 
 Camera& Camera::SetPosition(Vector3 position)
 {

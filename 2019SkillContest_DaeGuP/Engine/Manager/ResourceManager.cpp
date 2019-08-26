@@ -20,9 +20,9 @@ ResourceManager::~ResourceManager()
 	Reset();
 }
 
-void ResourceManager::RenderBegin()
+void ResourceManager::RenderBegin(INT flag)
 {
-	SAFE_EXECUTE(d3dxSprite)->Begin(D3DXSPRITE_ALPHABLEND);
+	SAFE_EXECUTE(d3dxSprite)->Begin(flag);
 }
 
 void ResourceManager::RenderEnd()
@@ -81,6 +81,11 @@ void ResourceManager::SetSpriteTransform(const Matrix& mat)
 void ResourceManager::SpriteDraw(Texture* source, const Color& color)
 {
 	d3dxSprite->Draw(source->Get(0)->texture, NULL, NULL, NULL, color);
+}
+
+void ResourceManager::SpriteDraw(Texture* source, const Color& color, const Vector3& center)
+{
+	d3dxSprite->Draw(source->Get(0)->texture, NULL, &center, NULL, color);
 }
 
 

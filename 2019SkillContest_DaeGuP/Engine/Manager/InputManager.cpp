@@ -42,3 +42,18 @@ void InputManager::MouseScrollEvent(bool flag)
 {
 	OnMouseWheelScroll(this, flag);
 }
+
+bool Input::GetKeyDown(int key)
+{
+	return INPUT.GetKeyDown(key);
+}
+
+bool Input::GetKeyUp(int key)
+{
+	return INPUT.GetkeyUp(key);
+}
+
+bool Input::GetKeyPress(int key)
+{
+	return INPUT.GetKeyPress(key);
+}

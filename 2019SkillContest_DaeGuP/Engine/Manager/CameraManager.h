@@ -1,6 +1,9 @@
 #pragma once
 #include "Singleton.h"
 
+class Camera;
+class Camera2D;
+
 class SkyBox;
 class CameraManager :
 	public Singleton<CameraManager>
@@ -18,7 +21,9 @@ public:
 	~CameraManager();
 
 	__declspec(property(get = GetLightPosition, put = SetLightPosition)) Vector3 LightPosition;
-		 
+	
+	void SetProjection(const Matrix& matProj);
+
 	void SetViewMatrix();
 
 	void SetSkyBox(SkyBox* skyBox);

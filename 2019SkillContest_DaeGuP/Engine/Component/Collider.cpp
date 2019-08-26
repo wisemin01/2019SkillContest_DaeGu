@@ -15,6 +15,12 @@ void Collider::Update()
 
 	if (aabbData)
 		aabbData->Translation(gameObject->transform->position);
+
+	if (rectData)
+		rectData->Translation(gameObject->transform->position);
+
+	if (circleData)
+		circleData->Translation(gameObject->transform->position);
 }
 
 void Collider::Destroy()
@@ -23,11 +29,14 @@ void Collider::Destroy()
 		gameObject->collider = nullptr;
 
 	type = ColliderType::None;
+	dType = DimensionType::None;
 
 	COLLISION.Remove(this);
 
 	SAFE_DELETE(sphereData);
 	SAFE_DELETE(aabbData);
+	SAFE_DELETE(rectData);
+	SAFE_DELETE(circleData);
 }
 
 void Collider::SetAsSphere(float radius)
@@ -78,10 +87,8 @@ void Collider::SetAsRectangle(float width, float height)
 bool Collider::IsCollision(const Collider* col1, const Collider* col2)
 {
 	// 타입이 정해지지 않았으면 충돌을 검출하지 않음
-	if (col1->type == ColliderType::None)
-		return false;
-
-	if (col2->type == ColliderType::None)
+	if (col1->type == ColliderType::None || 
+		col2->type == ColliderType::None)
 		return false;
 
 	// 두 객체가 차원이 다르면 충돌을 검출하지 않음.
@@ -116,8 +123,14 @@ bool Collider::IsCollision(const Collider* col1, const Collider* col2)
 	{
 		// 2D 충돌 검출
 
-	}
+		if (col1->type == ColliderType::Rectangle &&
+			col2->type == ColliderType::Rectangle)
+			return RectangleData::IsCollision(col1->rectData, col2->rectData);
 
+		if (col1->type == ColliderType::Circle &&
+			col2->type == ColliderType::Circle)
+			return CircleData::IsCollision(col1->circleData, col2->circleData);
+	}
 
 	return false;
 }
@@ -127,7 +140,7 @@ bool SphereData::IsCollision(const SphereData* a, const SphereData* b)
 	Vector3 diff = b->center - a->center;
 	float distance = Vector3::Length(diff);
 
-	if (distance <= (a->length + b->length))
+	if (distance <= (a->radius + b->radius))
 	{
 		return true;
 	}
@@ -165,8 +178,6 @@ Vector3 AABBData::Intersect(const AABBData* a, const AABBData* b)
 
 	Vector3 ret;
 
-	// ret = Vector3::Abs(amin - bmax);
-
 	for (int i = 0; i < 3; i++) {
 
 		if (amax[i] > bmin[i])
@@ -196,7 +207,7 @@ bool MixData::IsCollision(const AABBData* a, const SphereData* b)
 	Vector3 max = a->GetMax();
 
 	Vector3 sphereC = b->center;
-	float radius = b->length;
+	float radius = b->radius;
 
 	if (max.x < (sphereC.x - radius) || min.x > (sphereC.x + radius)) return false;
 	if (max.y < (sphereC.y - radius) || min.y > (sphereC.y + radius)) return false;
@@ -211,6 +222,29 @@ bool MixData::IsCollision(const SphereData* a, const AABBData* b)
 }
 
 void RectangleData::Translation(const Vector3& position)
+{
+	center = position;
+}
+
+bool RectangleData::IsCollision(const RectangleData* a, const RectangleData* b)
+{
+	return false;
+}
+
+bool CircleData::IsCollision(const CircleData* a, const CircleData* b)
+{
+	Vector3 diff = b->center - a->center;
+	float distance = Vector3::Length(diff);
+
+	if (distance <= (a->radius + b->radius))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+void CircleData::Translation(const Vector3& position)
 {
 	center = position;
 }

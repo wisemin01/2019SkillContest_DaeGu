@@ -20,6 +20,16 @@ const Matrix Matrix::IdentityNormal = Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0,
 
 const Quaternion Quaternion::Identity = Quaternion(0, 0, 0, 0);
 
+const Color Color::Red		= Color(1.0f, 0.0f, 0.0f, 1.0f);
+const Color Color::Orange	= Color(1.0f, 0.49f, 0.0f, 1.0f);
+const Color Color::Yellow	= Color(1.0f, 1.0f, 0.0f, 1.0f);
+const Color Color::Green	= Color(0.0f, 1.0f, 0.0f, 1.0f);
+const Color Color::Blue		= Color(0.0f, 0.0f, 1.0f, 1.0f);
+const Color Color::Violet	= Color(0.78f, 0.08f, 0.52f, 1.0f);
+const Color Color::Black	= Color(0.0f, 0.0f, 0.0f, 1.0f);
+const Color Color::White	= Color(1.0f, 1.0f, 1.0f, 1.0f);
+const Color Color::Original = Color(1.0f, 1.0f, 1.0f, 1.0f);
+
 Vector3 Vector3::Normalize(const Vector3& v)
 {
 	Vector3 ret;
@@ -165,6 +175,15 @@ Matrix Matrix::OrthoLH(float width, float height, float zn, float zf)
 	Matrix m;
 	D3DXMatrixOrthoLH(&m, width, height, zn, zf);
 	return m;
+}
+
+Matrix Matrix::View2D(const Vector3& position, const Vector3& scale, float angle)
+{
+	return Matrix(scale.x * cosf(angle), scale.x * sinf(angle), 0, 0,
+		-scale.y * sinf(angle), scale.y * cosf(angle), 0, 0,
+		0, 0, scale.z, 0,
+		-position.x * scale.y * cosf(angle) + position.y * scale.y * sinf(angle),
+		-position.x * scale.x * sinf(angle) - position.y * scale.y * cosf(angle), 0, 1);
 }
 
 Quaternion Quaternion::Rotation(float yaw, float pitch, float roll)
@@ -313,4 +332,38 @@ void Vector2::TransformNormal(const Matrix& m)
 void Vector2::TransformCoord(const Matrix& m)
 {
 	D3DXVec2TransformCoord(this, this, &m);
+}
+
+ostream& operator << (ostream& os, const Vector2& value)
+{
+	os << value.x << ", " << value.y;
+	return os;
+}
+
+ostream& operator << (ostream& os, const Vector3& value)
+{
+	os << value.x << ", " << value.y << ", " << value.z;
+	return os;
+}
+
+ostream& operator << (ostream& os, const Quaternion& value)
+{
+	os << value.x << ", " << value.y << ", " << value.z << ", " << value.w;
+	return os;
+}
+
+ostream& operator<<(ostream& os, const Matrix& value)
+{
+	os << "[" << value._11 << ", " << value._12 << ", " << value._13 << ", " << value._14 << "]" << endl;
+	os << "[" << value._21 << ", " << value._22 << ", " << value._23 << ", " << value._24 << "]" << endl;
+	os << "[" << value._31 << ", " << value._32 << ", " << value._33 << ", " << value._34 << "]" << endl;
+	os << "[" << value._41 << ", " << value._42 << ", " << value._43 << ", " << value._44 << "]";
+
+	return os;
+}
+
+ostream& operator << (ostream& os, const Vector4& value)
+{
+	os << value.x << ", " << value.y << ", " << value.z << ", " << value.w;
+	return os;
 }

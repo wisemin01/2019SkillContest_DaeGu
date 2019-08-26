@@ -7,6 +7,9 @@ class SpriteRenderer :
 private:
 	Texture* renderTexture = nullptr;
 
+	bool isCenterRender = true;
+	bool isUIRender = false;
+
 public:
 	virtual void SetTexture(Texture* texture);
 
@@ -17,4 +20,9 @@ public:
 
 	// Renderer을(를) 통해 상속됨
 	virtual void Render() override;
+
+	bool GetIsUIRender();
+	void SetIsUIRender(bool value);
+
+	__declspec(property(get = GetIsUIRender, put = SetIsUIRender)) bool IsUI;
 };

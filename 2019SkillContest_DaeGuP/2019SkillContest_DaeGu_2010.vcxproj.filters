@@ -195,6 +195,12 @@
     <ClInclude Include="Engine\Component\SpriteRenderer.h">
       <Filter>Engine\Component</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\BaseLayer\Camera2D.h">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>2019SkillContest_DaeGu_Game\Prefabs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainGame.cpp">
@@ -298,6 +304,12 @@
     </ClCompile>
     <ClCompile Include="Engine\Component\SpriteRenderer.cpp">
       <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BaseLayer\Camera2D.cpp">
+      <Filter>Engine\BaseLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>2019SkillContest_DaeGu_Game\Prefabs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

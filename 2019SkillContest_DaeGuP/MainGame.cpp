@@ -16,13 +16,13 @@ void MainGame::Render()
 
 void MainGame::Release()
 {
-	SceneManager::Destroy();
-	ObjectManager::Destroy();
-	CollisionManager::Destroy();
-	RenderManager::Destroy();
-	InputManager::Destroy();
-	CameraManager::Destroy();
-	ResourceManager::Destroy();
+	SceneManager		::Destroy();
+	ObjectManager		::Destroy();
+	CollisionManager	::Destroy();
+	RenderManager		::Destroy();
+	InputManager		::Destroy();
+	CameraManager		::Destroy();
+	ResourceManager		::Destroy();
 }
 
 void MainGame::OnResetDevice()

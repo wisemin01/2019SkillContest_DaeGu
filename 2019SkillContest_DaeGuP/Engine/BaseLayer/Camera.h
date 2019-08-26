@@ -2,8 +2,14 @@
 
 class Camera
 {
+	// Member : Shake Power, Shake Time
+	using ShakeInfo = std::tuple<float, float>;
+
 	friend class CameraManager;
 	friend class SkyBox;
+
+	ShakeInfo shakeInfo;
+	
 public:
 	Camera() {}
 	Camera(Vector3 pos, Vector3 look = Vector3(0.f, 0.f, 0.f), Vector3 up = Vector3(0.f, 1.f, 0.f))
@@ -11,11 +17,8 @@ public:
 
 	Vector3 position	= Vector3::Zero;
 	Vector3 lookAt		= Vector3::Zero;
-	Vector3 up			= Vector3::Zero;
+	Vector3 up			= Vector3::Up;
 
-	// shake power, shake time
-	std::tuple<float, float> shakeInfo;
-	
 	__declspec(property(get = GetForward))	Vector3 Forward;
 	__declspec(property(get = GetBack))		Vector3 Back;
 	__declspec(property(get = GetRight))	Vector3 Right;
@@ -23,9 +26,15 @@ public:
 	__declspec(property(get = GetUp))		Vector3 Up;
 	__declspec(property(get = GetDown))		Vector3 Down;
 
-	Camera& SetMain() { Camera::mainCamera = this; return *this; }
+	__declspec(property(get = GetViewMatrix))		Matrix ViewMatrix;
+	__declspec(property(get = GetProjectionMatrix)) Matrix ProjectionMatrix;
 
 	virtual void Update();
+
+	virtual Matrix GetViewMatrix();
+	virtual Matrix GetProjectionMatrix();
+
+	virtual Camera& SetMain();
 
 	Camera& SetPosition(Vector3 position);
 	Camera& SetLookAt(Vector3 lookAt);
@@ -38,11 +47,11 @@ public:
 	Vector3 GetUp();
 	Vector3 GetDown();
 
-private:
+protected:
+	// STATIC FIELD
 
 	static Camera* mainCamera;
 
-	// STATIC FIELD
 public:
 
 	static Camera* GetMainCamera() { return mainCamera; }
@@ -52,6 +61,6 @@ public:
 	static void Remove(const string& key);
 	static void RemoveAll();
 
-private:
+protected:
 	static std::map<string, Camera*> cameraContainer;
 };

@@ -26,14 +26,17 @@ public:
 	void SetScale(Vector3 v) { _scale = v; }
 
 	void Rotate(Vector3 degree);
+	void Move(Vector3 plus);
 
 	void SetRotationDegree(Vector3 r) { _rotation = Quaternion::Rotation(r.ToRadian()); }
 
 	Matrix GetWorldMatrix();
+	Matrix GetWorldMatrix2D();
 
 	Matrix GetRotationMatrix();
 
 	__declspec(property(get = GetWorldMatrix)) Matrix World;
+	__declspec(property(get = GetWorldMatrix2D)) Matrix World2D;
 	__declspec(property(get = GetRotationMatrix)) Matrix MatRotation;
 
 	// Component을(를) 통해 상속됨

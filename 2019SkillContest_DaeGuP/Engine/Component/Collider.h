@@ -8,10 +8,10 @@ class Vector3;
 struct SphereData
 {
 	SphereData() {}
-	SphereData(float radius) : length(radius) {}
+	SphereData(float radius) : radius(radius) {}
 
 	Vector3 center;
-	float length;
+	float radius;
 
 	static bool IsCollision(const SphereData* a, const SphereData* b);
 
@@ -58,6 +58,21 @@ public:
 	Vector3 center;
 
 	void Translation(const Vector3& position);
+	static bool IsCollision(const RectangleData* a, const RectangleData* b);
+};
+
+struct CircleData
+{
+public:
+	CircleData(float radius)
+		: radius(radius) {}
+
+	Vector3 center;
+	float radius;
+
+	static bool IsCollision(const CircleData* a, const CircleData* b);
+
+	void Translation(const Vector3& position);
 };
 
 class Collider :
@@ -82,6 +97,7 @@ public:
 	SphereData* sphereData = nullptr;
 	AABBData* aabbData = nullptr;
 	RectangleData* rectData = nullptr;
+	CircleData* circleData = nullptr;
 
 	ColliderType type = ColliderType::None;
 	DimensionType dType = DimensionType::None;

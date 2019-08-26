@@ -10,6 +10,8 @@
 #include "Component/Rigidbody.h"
 #include "Component/Collider.h"
 #include "Component/Renderer.h"
+#include "Component/MeshRenderer.h"
+#include "Component/SpriteRenderer.h"
 #include "Component/Transform.h"
 
 #include "BaseLayer/EventHandler.h"

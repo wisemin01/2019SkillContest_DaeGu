@@ -7,22 +7,25 @@ class RenderManager :
 {
 private:
 	std::list<Renderer*> rendererList;
+	std::list<Renderer*> spriteList;
+	std::list<Renderer*> UIList;
 public:
+
+	bool Enable3D = true;
+	bool Enable2D = true;
+	bool EnableUI = true;
+
 	RenderManager();
 	~RenderManager();
 
 	void Add(Renderer* renderer);
 	void Remove(Renderer* renderer);
 
-	void operator +=(Renderer* value)
-	{
-		Add(value);
-	}
+	void AddUI(Renderer* renderer);
+	void RemoveUI(Renderer* renderer);
 
-	void operator -=(Renderer* value)
-	{
-		Remove(value);
-	}
+	void AddSprite(Renderer* renderer);
+	void RemoveSprite(Renderer* renderer);
 
 	void Render();
 };
